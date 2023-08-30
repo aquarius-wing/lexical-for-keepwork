@@ -99,6 +99,7 @@ function exportChildren(node, textTransformersIndex, textMatchTransformers) {
       output.push(exportTextFormat(child, child.getTextContent(), textTransformersIndex));
     } else if (lexical.$isElementNode(child)) {
       output.push(exportChildren(child, textTransformersIndex, textMatchTransformers));
+      output.push('\n');
     } else if (lexical.$isDecoratorNode(child)) {
       output.push(child.getTextContent());
     }
