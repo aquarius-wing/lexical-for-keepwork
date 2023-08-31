@@ -228,7 +228,7 @@ function createMarkdownImport(transformers) {
         if (elementTransformer.getNumberOfLines) {
           const match = lineText.match(elementTransformer.regExp);
           const numberOfLines = elementTransformer.getNumberOfLines(lines, i);
-          if (i + numberOfLines >= lines.length) {
+          if (i + numberOfLines > lines.length) {
             continue;
           }
           if (match) {
@@ -874,7 +874,7 @@ const CODE = {
         return endLineIndex - startLineIndex;
       }
     }
-    return 1;
+    return endLineIndex - startLineIndex;
   },
   regExp: /^```(\w{1,10})?\s?$/,
   replace: createBlockNode(match => {
