@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalAutoFocusPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalAutoFocusPlugin.dev.js') : require('./LexicalAutoFocusPlugin.prod.js')
+const LexicalAutoFocusPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalAutoFocusPlugin.dev.js') : require('./LexicalAutoFocusPlugin.prod.js')
 module.exports = LexicalAutoFocusPlugin;

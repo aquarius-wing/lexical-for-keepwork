@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalSelection = process.env.NODE_ENV === 'development' ? require('./LexicalSelection.dev.js') : require('./LexicalSelection.prod.js')
+const LexicalSelection = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalSelection.dev.js') : require('./LexicalSelection.prod.js')
 module.exports = LexicalSelection;

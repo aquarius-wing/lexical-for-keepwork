@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalTreeView = process.env.NODE_ENV === 'development' ? require('./LexicalTreeView.dev.js') : require('./LexicalTreeView.prod.js')
+const LexicalTreeView = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalTreeView.dev.js') : require('./LexicalTreeView.prod.js')
 module.exports = LexicalTreeView;

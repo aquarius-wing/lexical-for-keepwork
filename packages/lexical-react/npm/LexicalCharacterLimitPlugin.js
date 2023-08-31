@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalCharacterLimitPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalCharacterLimitPlugin.dev.js') : require('./LexicalCharacterLimitPlugin.prod.js')
+const LexicalCharacterLimitPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalCharacterLimitPlugin.dev.js') : require('./LexicalCharacterLimitPlugin.prod.js')
 module.exports = LexicalCharacterLimitPlugin;

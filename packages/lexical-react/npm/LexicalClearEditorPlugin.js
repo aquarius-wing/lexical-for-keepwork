@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalClearEditorPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalClearEditorPlugin.dev.js') : require('./LexicalClearEditorPlugin.prod.js')
+const LexicalClearEditorPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalClearEditorPlugin.dev.js') : require('./LexicalClearEditorPlugin.prod.js')
 module.exports = LexicalClearEditorPlugin;

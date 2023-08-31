@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalComposerContext = process.env.NODE_ENV === 'development' ? require('./LexicalComposerContext.dev.js') : require('./LexicalComposerContext.prod.js')
+const LexicalComposerContext = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalComposerContext.dev.js') : require('./LexicalComposerContext.prod.js')
 module.exports = LexicalComposerContext;

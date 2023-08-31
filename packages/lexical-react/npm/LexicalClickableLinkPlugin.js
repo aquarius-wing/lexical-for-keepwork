@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalClickableLinkPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalClickableLinkPlugin.dev.js') : require('./LexicalClickableLinkPlugin.prod.js')
+const LexicalClickableLinkPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalClickableLinkPlugin.dev.js') : require('./LexicalClickableLinkPlugin.prod.js')
 module.exports = LexicalClickableLinkPlugin;

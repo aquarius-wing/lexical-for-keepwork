@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalNestedComposer = process.env.NODE_ENV === 'development' ? require('./LexicalNestedComposer.dev.js') : require('./LexicalNestedComposer.prod.js')
+const LexicalNestedComposer = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalNestedComposer.dev.js') : require('./LexicalNestedComposer.prod.js')
 module.exports = LexicalNestedComposer;

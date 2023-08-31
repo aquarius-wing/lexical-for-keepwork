@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalCollaborationContext = process.env.NODE_ENV === 'development' ? require('./LexicalCollaborationContext.dev.js') : require('./LexicalCollaborationContext.prod.js')
+const LexicalCollaborationContext = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalCollaborationContext.dev.js') : require('./LexicalCollaborationContext.prod.js')
 module.exports = LexicalCollaborationContext;

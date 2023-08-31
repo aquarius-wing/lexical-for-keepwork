@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalCheckListPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalCheckListPlugin.dev.js') : require('./LexicalCheckListPlugin.prod.js')
+const LexicalCheckListPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalCheckListPlugin.dev.js') : require('./LexicalCheckListPlugin.prod.js')
 module.exports = LexicalCheckListPlugin;

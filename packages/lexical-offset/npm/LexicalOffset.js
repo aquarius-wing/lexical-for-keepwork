@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalOffset = process.env.NODE_ENV === 'development' ? require('./LexicalOffset.dev.js') : require('./LexicalOffset.prod.js')
+const LexicalOffset = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalOffset.dev.js') : require('./LexicalOffset.prod.js')
 module.exports = LexicalOffset;

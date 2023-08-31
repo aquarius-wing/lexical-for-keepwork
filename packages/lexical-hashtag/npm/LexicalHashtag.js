@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalHashtag = process.env.NODE_ENV === 'development' ? require('./LexicalHashtag.dev.js') : require('./LexicalHashtag.prod.js')
+const LexicalHashtag = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalHashtag.dev.js') : require('./LexicalHashtag.prod.js')
 module.exports = LexicalHashtag;

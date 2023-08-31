@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalAutoLinkPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalAutoLinkPlugin.dev.js') : require('./LexicalAutoLinkPlugin.prod.js')
+const LexicalAutoLinkPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalAutoLinkPlugin.dev.js') : require('./LexicalAutoLinkPlugin.prod.js')
 module.exports = LexicalAutoLinkPlugin;

@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalClipboard = process.env.NODE_ENV === 'development' ? require('./LexicalClipboard.dev.js') : require('./LexicalClipboard.prod.js')
+const LexicalClipboard = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalClipboard.dev.js') : require('./LexicalClipboard.prod.js')
 module.exports = LexicalClipboard;

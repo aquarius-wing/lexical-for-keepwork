@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalHorizontalRuleNode = process.env.NODE_ENV === 'development' ? require('./LexicalHorizontalRuleNode.dev.js') : require('./LexicalHorizontalRuleNode.prod.js')
+const LexicalHorizontalRuleNode = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalHorizontalRuleNode.dev.js') : require('./LexicalHorizontalRuleNode.prod.js')
 module.exports = LexicalHorizontalRuleNode;

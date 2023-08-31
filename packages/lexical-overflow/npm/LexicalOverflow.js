@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalOverflow = process.env.NODE_ENV === 'development' ? require('./LexicalOverflow.dev.js') : require('./LexicalOverflow.prod.js')
+const LexicalOverflow = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalOverflow.dev.js') : require('./LexicalOverflow.prod.js')
 module.exports = LexicalOverflow;

@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const useLexicalEditable = process.env.NODE_ENV === 'development' ? require('./useLexicalEditable.dev.js') : require('./useLexicalEditable.prod.js')
+const useLexicalEditable = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./useLexicalEditable.dev.js') : require('./useLexicalEditable.prod.js')
 module.exports = useLexicalEditable;

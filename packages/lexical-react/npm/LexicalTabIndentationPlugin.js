@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalTabIndentationPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalTabIndentationPlugin.dev.js') : require('./LexicalTabIndentationPlugin.prod.js')
+const LexicalTabIndentationPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalTabIndentationPlugin.dev.js') : require('./LexicalTabIndentationPlugin.prod.js')
 module.exports = LexicalTabIndentationPlugin;

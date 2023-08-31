@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalBlockWithAlignableContents = process.env.NODE_ENV === 'development' ? require('./LexicalBlockWithAlignableContents.dev.js') : require('./LexicalBlockWithAlignableContents.prod.js')
+const LexicalBlockWithAlignableContents = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalBlockWithAlignableContents.dev.js') : require('./LexicalBlockWithAlignableContents.prod.js')
 module.exports = LexicalBlockWithAlignableContents;

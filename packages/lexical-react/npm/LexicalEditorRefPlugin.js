@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalEditorRefPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalEditorRefPlugin.dev.js') : require('./LexicalEditorRefPlugin.prod.js')
+const LexicalEditorRefPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalEditorRefPlugin.dev.js') : require('./LexicalEditorRefPlugin.prod.js')
 module.exports = LexicalEditorRefPlugin;

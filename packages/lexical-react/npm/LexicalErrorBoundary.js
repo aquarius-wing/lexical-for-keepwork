@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalErrorBoundary = process.env.NODE_ENV === 'development' ? require('./LexicalErrorBoundary.dev.js') : require('./LexicalErrorBoundary.prod.js')
+const LexicalErrorBoundary = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalErrorBoundary.dev.js') : require('./LexicalErrorBoundary.prod.js')
 module.exports = LexicalErrorBoundary;

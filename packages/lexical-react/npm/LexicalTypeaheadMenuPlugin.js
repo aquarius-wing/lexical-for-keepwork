@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalTypeaheadMenuPlugin = process.env.NODE_ENV === 'development' ? require('./LexicalTypeaheadMenuPlugin.dev.js') : require('./LexicalTypeaheadMenuPlugin.prod.js')
+const LexicalTypeaheadMenuPlugin = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalTypeaheadMenuPlugin.dev.js') : require('./LexicalTypeaheadMenuPlugin.prod.js')
 module.exports = LexicalTypeaheadMenuPlugin;

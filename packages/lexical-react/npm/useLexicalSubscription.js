@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const useLexicalSubscription = process.env.NODE_ENV === 'development' ? require('./useLexicalSubscription.dev.js') : require('./useLexicalSubscription.prod.js')
+const useLexicalSubscription = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./useLexicalSubscription.dev.js') : require('./useLexicalSubscription.prod.js')
 module.exports = useLexicalSubscription;

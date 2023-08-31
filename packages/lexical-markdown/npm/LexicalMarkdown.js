@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalMarkdown = process.env.NODE_ENV === 'development' ? require('./LexicalMarkdown.dev.js') : require('./LexicalMarkdown.prod.js')
+const LexicalMarkdown = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalMarkdown.dev.js') : require('./LexicalMarkdown.prod.js')
 module.exports = LexicalMarkdown;

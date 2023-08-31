@@ -5,5 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict'
-const LexicalHeadless = process.env.NODE_ENV === 'development' ? require('./LexicalHeadless.dev.js') : require('./LexicalHeadless.prod.js')
+const LexicalHeadless = ['development', 'test'].includes(process.env.NODE_ENV) ? require('./LexicalHeadless.dev.js') : require('./LexicalHeadless.prod.js')
 module.exports = LexicalHeadless;
